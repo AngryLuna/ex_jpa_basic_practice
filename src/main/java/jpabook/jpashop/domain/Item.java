@@ -15,7 +15,9 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Item {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn
+public abstract class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "item_id")
